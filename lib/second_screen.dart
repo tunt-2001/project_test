@@ -17,6 +17,8 @@ class _SecondScreenState extends State<SecondScreen> {
   final _avatarController = TextEditingController();
   late String _avatarUrl;
 
+
+
   @override
   void initState() {
     super.initState();

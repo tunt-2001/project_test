@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'ListView ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -146,6 +147,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundImage: NetworkImage(contact.avatar),
                 backgroundColor: Colors.white,
               ),
+              onTap: () {
+                // close(context, contact);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(contact),),);
+              },
               title: Text(
                 // _searchResult[index].name,
                 contact.name,
@@ -313,6 +318,35 @@ class ContactSearchDelegate extends SearchDelegate<Contact> {
           },
         );
       },
+    );
+  }
+}
+
+class DetailScreen extends StatelessWidget {
+  final Contact contacts;
+  DetailScreen(this.contacts);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(contacts.name),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CircleAvatar(
+              radius: 80,
+              backgroundImage: NetworkImage(contacts.avatar),
+              backgroundColor: Colors.white,
+            ),
+            SizedBox(height: 16),
+            Text('Name: ${contacts.name}'),
+            Text('Phone: ${contacts.phone}'),
+          ],
+        ),
+      ),
     );
   }
 }
