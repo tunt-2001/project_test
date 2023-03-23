@@ -44,12 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contacts'),
-        // actions: [
-        //   IconButton(onPressed: () => setState(() {
-        //
-        //   }), icon: Icon(Icons.search,size: 30,),
-        //   )
-        // ],
         actions: [
           // Navigate to the Search Screen
           IconButton(
