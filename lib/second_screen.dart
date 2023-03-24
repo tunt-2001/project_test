@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_test/main.dart';
 
+import 'contact.dart';
+
 class SecondScreen extends StatefulWidget {
   final Contact? contacts;
 
