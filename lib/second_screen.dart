@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:project_test/main.dart';
 
 class SecondScreen extends StatefulWidget {
-  final Contact? contact;
+  final Contact? contacts;
 
-  SecondScreen({this.contact});
+  SecondScreen({this.contacts});
 
   @override
   _SecondScreenState createState() => _SecondScreenState();
@@ -22,11 +22,11 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   void initState() {
     super.initState();
-    if (widget.contact != null) {
-      _nameController.text = widget.contact!.name;
-      _phoneController.text = widget.contact!.phone;
-      _avatarController.text = widget.contact!.avatar;
-      _avatarUrl = widget.contact!.avatar;
+    if (widget.contacts != null) {
+      _nameController.text = widget.contacts!.name;
+      _phoneController.text = widget.contacts!.phone;
+      _avatarController.text = widget.contacts!.avatar;
+      _avatarUrl = widget.contacts!.avatar;
     }
   }
 
@@ -34,7 +34,7 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.contact == null ? 'Add Contact' : 'Edit Contact'),
+        title: Text(widget.contacts == null ? 'Add Contact' : 'Edit Contact'),
       ),
       body: SingleChildScrollView(
         child: Padding(

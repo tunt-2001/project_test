@@ -85,9 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
 
 
-
-
-
   ];
   String _searchQuery = '';
   List<Contact> _searchResult = [];
@@ -178,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => SecondScreen(
-                        contact: contact,
+                        contacts: contact,
                       ),
                     ),
                   );
@@ -224,36 +221,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// class SearchPage extends StatelessWidget {
-//   const SearchPage({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//           // The search area here
-//           title: Container(
-//         width: double.infinity,
-//         height: 40,
-//         decoration: BoxDecoration(
-//             color: Colors.white, borderRadius: BorderRadius.circular(5)),
-//         child: Center(
-//           child: TextField(
-//             decoration: InputDecoration(
-//                 prefixIcon: const Icon(Icons.search),
-//                 suffixIcon: IconButton(
-//                   icon: const Icon(Icons.clear),
-//                   onPressed: () {
-//                   },
-//                 ),
-//                 hintText: 'Search...',
-//                 border: InputBorder.none),
-//           ),
-//         ),
-//       )),
-//     );
-//   }
-// }
 
 class ContactSearchDelegate extends SearchDelegate<Contact> {
   final List<Contact> contacts;
